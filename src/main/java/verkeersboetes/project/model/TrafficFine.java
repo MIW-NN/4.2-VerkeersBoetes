@@ -10,27 +10,18 @@ public class TrafficFine {
     private double fineAmount;
 
     public TrafficFine() {
-        this(DEFAULT_PERPETRATOR_NAME,DEFAULT_LICENSE_PLATE);
     }
 
     public TrafficFine(String perpetratorName, String licensePlate) {
-        this(perpetratorName, licensePlate, DEFAULT_FINE_AMOUNT);
     }
 
     private TrafficFine(String perpetratorName, String licensePlate, double fineAmount) {
-        this.perpetratorName = perpetratorName;
-        this.licensePlate = licensePlate;
-        this.fineAmount = fineAmount;
     }
 
     public String toString() {
-        return String.format("Verkeersboete voor %s, kenteken %s, boete %.2f euro", this.perpetratorName, this.licensePlate, this.fineAmount);
-    }
-
-    public void setFineAmount(double fineAmount) {
-        this.fineAmount = fineAmount;
+        return "";
     }
     public double getFineAmount() {
-        return this.fineAmount;
+        return 0;
     }
 }
