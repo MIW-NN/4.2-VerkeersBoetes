@@ -6,7 +6,7 @@ public class SnelheidsBoete {
     final static private int BOETEBEDRAG_PER_KM_LAAG = 10;
     final static private int BOETEBEDRAG_PER_KM_MEDIUM = 15;
     final static private int BOETEBEDRAG_PER_KM_HIGH = 20;
-    final static private int MAXIMUM_BOET = 1000;
+    final static private int MAXIMUM_BOETE = 1000;
 
     private int gemetenSnelheid;
     private int maximumSnelheid;
