@@ -12,15 +12,41 @@ public class SnelheidsBoete extends VerkeersBoete {
     private int maximumSnelheid;
 
     public SnelheidsBoete(String naam, String kenteken, int gemetenSnelheid, int maximumSnelheid) {
-        // TODO
+        super(naam, kenteken);
+
+        this.gemetenSnelheid = gemetenSnelheid;
+        this.maximumSnelheid = maximumSnelheid;
+        bepaalBedrag();
     }
 
     public void bepaalBedrag() {
-        // TODO
+        int kmsTeHard = gemetenSnelheid - maximumSnelheid;
+        double bedrag;
+
+        if (kmsTeHard <= 0) {
+            bedrag = 0;
+        } else if (kmsTeHard <= SNELHEIDSGRENS_LAGE_BOETE) {
+            bedrag = kmsTeHard * BOETEBEDRAG_PER_KM_LAAG;
+        } else if (kmsTeHard <= SNELHEIDSGRENS_MEDIUM_BOETE) {
+            bedrag = kmsTeHard * BOETEBEDRAG_PER_KM_MEDIUM;
+        } else {
+            bedrag = kmsTeHard * BOETEBEDRAG_PER_KM_HIGH;
+        }
+
+        if (bedrag > MAXIMUM_BOETE) {
+            bedrag = MAXIMUM_BOETE;
+        }
+
+        setBedrag(bedrag);
     }
 
     public String toString() {
-        // TODO
-        return "";
+        String returnString = super.toString();
+
+        returnString = returnString.replace("Verkeersboete", "Parkeerboete");
+        returnString += String.format(" voor %d km/u waar %d km/u is toegestaan",
+                gemetenSnelheid, maximumSnelheid);
+
+        return returnString;
     }
 }

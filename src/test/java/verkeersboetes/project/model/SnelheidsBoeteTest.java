@@ -13,7 +13,6 @@ public class SnelheidsBoeteTest {
         assertEquals(100, speedingFine.getBedrag(), DOUBLE_DELTA);
     }
 
-
     @Test
     public void whenCreatingSpeedingFineWithMediumSpeeding_expectFineToHaveTheRightFineAmout(){
         var speedingFine = new SnelheidsBoete("name","license-plate", 90,70 );
