@@ -4,8 +4,8 @@ public class VerkeersBoete {
     private static final double DEFAULT_BEDRAG = 0.0;
     private static final String DEFAULT_KENTEKEN = "Onbekend";
     private static final String DEFAULT_NAAM_DADER = "Onbekend";
-    private String naamDader;
-    private String kenteken;
+    private final String naamDader;
+    private final String kenteken;
     private double bedrag;
 
     private VerkeersBoete(String naamDader, String kenteken, double bedrag) {

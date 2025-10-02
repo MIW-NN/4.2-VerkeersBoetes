@@ -8,8 +8,8 @@ public class SnelheidsBoete extends VerkeersBoete {
     final static private int BOETEBEDRAG_PER_KM_HIGH = 20;
     final static private int MAXIMUM_BOETE = 1000;
 
-    private int gemetenSnelheid;
-    private int maximumSnelheid;
+    private final int gemetenSnelheid;
+    private final int maximumSnelheid;
 
     public SnelheidsBoete(String naam, String kenteken, int gemetenSnelheid, int maximumSnelheid) {
         super(naam, kenteken);

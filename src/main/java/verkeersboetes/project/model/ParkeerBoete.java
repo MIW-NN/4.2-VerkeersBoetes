@@ -5,7 +5,7 @@ public class ParkeerBoete extends VerkeersBoete {
     final static private double BOETE_ZONE2 = 100.0;
     final static private double BOETE_ZONE3 = 180.0;
 
-    private int zone;
+    private final int zone;
 
     public ParkeerBoete(String naam, String kenteken, int zone) {
         super(naam, kenteken);
