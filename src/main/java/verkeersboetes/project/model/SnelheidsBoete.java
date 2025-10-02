@@ -1,6 +1,6 @@
 package verkeersboetes.project.model;
 
-public class SnelheidsBoete {
+public class SnelheidsBoete extends VerkeersBoete {
     final static private int SNELHEIDSGRENS_LAGE_BOETE = 10;
     final static private int SNELHEIDSGRENS_MEDIUM_BOETE = 30;
     final static private int BOETEBEDRAG_PER_KM_LAAG = 10;
@@ -15,7 +15,7 @@ public class SnelheidsBoete {
         // TODO
     }
 
-    public void bepaalBoete() {
+    public void bepaalBedrag() {
         // TODO
     }
 

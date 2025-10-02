@@ -21,6 +21,7 @@ public class VerkeersBoete {
         // TODO
         return "";
     }
+
     public double getBedrag() {
         // TODO
         return 0;
