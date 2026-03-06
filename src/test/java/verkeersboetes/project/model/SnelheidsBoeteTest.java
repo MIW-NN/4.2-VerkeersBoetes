@@ -5,33 +5,35 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SnelheidsBoeteTest {
     private static final double DOUBLE_DELTA = 0.0001;
+    private static final String NAAM = "B. Oefje";
+    private static final String KENTEKEN = "AA-123-Z";
 
 @Test
-    public void whenCreatingSpeedingFineWithLowSpeeding_expectFineToHaveTheRightFineAmout(){
-        var speedingFine = new SnelheidsBoete("name","license-plate", 90,80 );
+    public void getBedragVoor90InEen80Is100(){
+        SnelheidsBoete snelheidsBoete = new SnelheidsBoete(NAAM,KENTEKEN, 90,80 );
 
-        assertEquals(100, speedingFine.getBedrag(), DOUBLE_DELTA);
+        assertEquals(100, snelheidsBoete.getBedrag(), DOUBLE_DELTA);
     }
 
 
     @Test
-    public void whenCreatingSpeedingFineWithMediumSpeeding_expectFineToHaveTheRightFineAmout(){
-        var speedingFine = new SnelheidsBoete("name","license-plate", 90,70 );
+    public void getBedragVoor90InEen70Is300(){
+        SnelheidsBoete snelheidsBoete = new SnelheidsBoete(NAAM, KENTEKEN, 90,70 );
 
-        assertEquals(300, speedingFine.getBedrag(), DOUBLE_DELTA);
+        assertEquals(300, snelheidsBoete.getBedrag(), DOUBLE_DELTA);
     }
 
     @Test
-    public void whenCreatingSpeedingFineWithHighSpeeding_expectFineToHaveTheRightFineAmout(){
-        var speedingFine = new SnelheidsBoete("name","license-plate", 90,55 );
+    public void getBedragVoor90InEen55Is700(){
+        SnelheidsBoete snelheidsBoete = new SnelheidsBoete(NAAM, KENTEKEN, 90,55 );
 
-        assertEquals(700, speedingFine.getBedrag(), DOUBLE_DELTA);
+        assertEquals(700, snelheidsBoete.getBedrag(), DOUBLE_DELTA);
     }
 
     @Test
-    public void whenCreatingSpeedingFineWithMAximumFineAmount_expectFineToHaveMaximumFineAmout(){
-        var speedingFine = new SnelheidsBoete("name","license-plate", 90,30 );
+    public void getBedragVoor90InEen30Is1000(){
+        SnelheidsBoete snelheidsBoete = new SnelheidsBoete(NAAM, KENTEKEN, 90,30 );
 
-        assertEquals(1000, speedingFine.getBedrag(), DOUBLE_DELTA);
+        assertEquals(1000, snelheidsBoete.getBedrag(), DOUBLE_DELTA);
     }
 }
